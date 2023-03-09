@@ -29,7 +29,7 @@ const generateHtmlCatCard = ({id,favorite,image,name,rate}) =>{
                     <div class="cat-heart">
                         ${favorite ?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular  fa-heart"></i>'}
                     </div> 
-                    <img src="${image}" width="100%"  alt="cat_${id}">
+                    <img src="${image}" width="100%" height="100%" alt="cat_${id}">
                 </div>
                 <div class="cat-name">${name}</div>
                 <div class="rating-cat">
@@ -176,12 +176,8 @@ const handleBtnClick = async (event) => {
             case 'save':
                 event.preventDefault()
                 const $formCat = document.forms.currentCat
-                if($formCat.name.value.length === 0){
-                    $formCat.name.placeholder = "Введите имя"
-                    $formCat.name.style.backgroundColor = "red"
-                    return
-                }
-                $formCat.save.disabled = true
+             
+                //$formCat.save.disabled = true
                 const catJson = collectDateFromFormCat($formCat)
                 await cats.addCat(catJson)
                 localStorage.removeItem('saveCat')

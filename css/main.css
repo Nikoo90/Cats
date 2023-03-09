@@ -49,7 +49,7 @@ a{
 }
 .cats-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     grid-auto-rows: 1fr;
     padding: 20px 0;
     gap:20px;
@@ -61,7 +61,7 @@ a{
     display: grid;
     row-gap: 10px;
     justify-items: center;
-    padding: 15px;
+    padding:  15px ;
     background-color: aqua;
     box-shadow: 10px 5px 5px rgba(66, 65, 65, .5);
     transition: transform .5s ease-in-out;
@@ -71,7 +71,12 @@ a{
 }
 .container-cat-img{
     position: relative;
-   
+    
+}
+.container-cat-img>img{
+    object-fit: cover;
+    border-radius: 10px;
+    
 }
 .cat-name{
     font-size: 2rem;
@@ -297,15 +302,20 @@ a{
     .cat-container:hover{
         transform: none;
     }
+    .container-modal{
+        align-items: center;
+    }
     .modal{
-        width: 100vw;
-        height: 100vh;
-        font-size: 1rem;  
+        padding: 0 0; 
+        width: 93vw;
+        max-height: 90vh;
+        font-size: 1rem; 
+      
     }
 
     .modal__form{
-        height: 75vh;
         width: 100vw;
+        
     }
 
     .modal__close{
@@ -319,7 +329,6 @@ a{
         padding: 20px 10px;
      }
      .modal{
-       
         height: 100vh;
         font-size: 1rem;
     }
